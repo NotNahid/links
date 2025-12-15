@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Terminal</title>
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --text-color: #c9d1d9;
+            --link-color: #58a6ff; /* Blue */
+            --link-hover: #79c0ff;
+            --visited-color: #8b949e; /* Dimmed Gray */
+            --visited-accent: #a371f7; /* Purple */
+            --border-color: #30363d;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 40px;
+        }
+
+        header {
+            max-width: 1200px;
+            margin: 0 auto 40px auto;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            color: #fff;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin: 0;
+        }
+
+        p.subtitle {
+            color: #8b949e;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+
+        /* The Grid Layout */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Link Cards */
+        .link-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 15px;
+            transition: all 0.2s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .link-card:hover {
+            border-color: var(--link-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        }
+
+        /* The Link itself */
+        a {
+            text-decoration: none;
+            color: var(--link-color);
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--link-hover);
+            text-decoration: underline;
+        }
+
+        /* Visited State (Browser History) */
+        a:visited {
+            color: var(--visited-accent);
+        }
+
+        /* Active/Clicked State (Instant Visual Feedback) */
+        a.clicked {
+            color: var(--visited-accent) !important;
+            text-decoration: line-through;
+            opacity: 0.6;
+        }
+        
+        /* Icon decoration */
+        .icon {
+            margin-right: 8px;
+            display: inline-block;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>CMD // LINK_TRACKER</h1>
+    <p class="subtitle">Click a link to mark it as processed.</p>
+</header>
+
+<div class="grid-container">
+    <!-- Links List -->
+    <!-- The 'onclick' ensures the color changes instantly even if history is disabled -->
+    <div class="link-card"><a href="https://2Dimensions.com" target="_blank" onclick="this.className='clicked'">2Dimensions.com</a></div>
+    <div class="link-card"><a href="http://forum.3dnews.ru" target="_blank" onclick="this.className='clicked'">forum.3dnews.ru</a></div>
+    <div class="link-card"><a href="https://www.7cups.com" target="_blank" onclick="this.className='clicked'">7cups.com</a></div>
+    <div class="link-card"><a href="https://www.9gag.com" target="_blank" onclick="this.className='clicked'">9gag.com</a></div>
+    <div class="link-card"><a href="https://about.me" target="_blank" onclick="this.className='clicked'">about.me</a></div>
+    <div class="link-card"><a href="https://independent.academia.edu" target="_blank" onclick="this.className='clicked'">independent.academia.edu</a></div>
+    <div class="link-card"><a href="https://www.alik.cz" target="_blank" onclick="this.className='clicked'">alik.cz</a></div>
+    <div class="link-card"><a href="https://www.alltrails.com" target="_blank" onclick="this.className='clicked'">alltrails.com</a></div>
+    <div class="link-card"><a href="https://www.anobii.com" target="_blank" onclick="this.className='clicked'">anobii.com</a></div>
+    <div class="link-card"><a href="https://discussions.apple.com" target="_blank" onclick="this.className='clicked'">discussions.apple.com</a></div>
+    <div class="link-card"><a href="https://archive.org" target="_blank" onclick="this.className='clicked'">archive.org</a></div>
+    <div class="link-card"><a href="https://asciinema.org" target="_blank" onclick="this.className='clicked'">asciinema.org</a></div>
+    <div class="link-card"><a href="https://ask.fedoraproject.org" target="_blank" onclick="this.className='clicked'">ask.fedoraproject.org</a></div>
+    <div class="link-card"><a href="https://ask.fm" target="_blank" onclick="this.className='clicked'">ask.fm</a></div>
+    <div class="link-card"><a href="https://discuss.atom.io" target="_blank" onclick="this.className='clicked'">discuss.atom.io</a></div>
+    <div class="link-card"><a href="https://audiojungle.net" target="_blank" onclick="this.className='clicked'">audiojungle.net</a></div>
+    <div class="link-card"><a href="https://www.avizo.cz" target="_blank" onclick="this.className='clicked'">avizo.cz</a></div>
+    <div class="link-card"><a href="https://blip.fm" target="_blank" onclick="this.className='clicked'">blip.fm</a></div>
+    <div class="link-card"><a href="https://booth.pm" target="_blank" onclick="this.className='clicked'">booth.pm</a></div>
+    <div class="link-card"><a href="https://www.bandcamp.com" target="_blank" onclick="this.className='clicked'">bandcamp.com</a></div>
+    <div class="link-card"><a href="https://www.bazar.cz" target="_blank" onclick="this.className='clicked'">bazar.cz</a></div>
+    <div class="link-card"><a href="https://www.behance.net" target="_blank" onclick="this.className='clicked'">behance.net</a></div>
+    <div class="link-card"><a href="https://binarysearch.io" target="_blank" onclick="this.className='clicked'">binarysearch.io</a></div>
+    <div class="link-card"><a href="https://bitbucket.org" target="_blank" onclick="this.className='clicked'">bitbucket.org</a></div>
+    <div class="link-card"><a href="https://bitcoinforum.com" target="_blank" onclick="this.className='clicked'">bitcoinforum.com</a></div>
+    <div class="link-card"><a href="https://blogspot.com" target="_blank" onclick="this.className='clicked'">blogspot.com</a></div>
+    <div class="link-card"><a href="https://bodyspace.bodybuilding.com" target="_blank" onclick="this.className='clicked'">bodyspace.bodybuilding.com</a></div>
+    <div class="link-card"><a href="https://www.bookcrossing.com" target="_blank" onclick="this.className='clicked'">bookcrossing.com</a></div>
+    <div class="link-card"><a href="https://buymeacoff.ee" target="_blank" onclick="this.className='clicked'">buymeacoff.ee</a></div>
+    <div class="link-card"><a href="https://buzzfeed.com" target="_blank" onclick="this.className='clicked'">buzzfeed.com</a></div>
+    <div class="link-card"><a href="https://www.cnet.com" target="_blank" onclick="this.className='clicked'">cnet.com</a></div>
+    <div class="link-card"><a href="https://www.capfriendly.com" target="_blank" onclick="this.className='clicked'">capfriendly.com</a></div>
+    <div class="link-card"><a href="https://carbonmade.com" target="_blank" onclick="this.className='clicked'">carbonmade.com</a></div>
+    <div class="link-card"><a href="https://career.habr.com" target="_blank" onclick="this.className='clicked'">career.habr.com</a></div>
+    <div class="link-card"><a href="https://beta.cent.co" target="_blank" onclick="this.className='clicked'">beta.cent.co</a></div>
+    <div class="link-card"><a href="https://www.championat.com" target="_blank" onclick="this.className='clicked'">championat.com</a></div>
+    <div class="link-card"><a href="https://profil.chatujme.cz" target="_blank" onclick="this.className='clicked'">profil.chatujme.cz</a></div>
+    <div class="link-card"><a href="https://www.chess.com" target="_blank" onclick="this.className='clicked'">chess.com</a></div>
+    <div class="link-card"><a href="https://www.cloob.com" target="_blank" onclick="this.className='clicked'">cloob.com</a></div>
+    <div class="link-card"><a href="https://community.cloudflare.com" target="_blank" onclick="this.className='clicked'">community.cloudflare.com</a></div>
+    <div class="link-card"><a href="https://www.clozemaster.com" target="_blank" onclick="this.className='clicked'">clozemaster.com</a></div>
+    <div class="link-card"><a href="https://www.codecademy.com" target="_blank" onclick="this.className='clicked'">codecademy.com</a></div>
+    <div class="link-card"><a href="https://www.codechef.com" target="_blank" onclick="this.className='clicked'">codechef.com</a></div>
+    <div class="link-card"><a href="https://codepen.io" target="_blank" onclick="this.className='clicked'">codepen.io</a></div>
+    <div class="link-card"><a href="https://www.codewars.com" target="_blank" onclick="this.className='clicked'">codewars.com</a></div>
+    <div class="link-card"><a href="https://www.colourlovers.com" target="_blank" onclick="this.className='clicked'">colourlovers.com</a></div>
+    <div class="link-card"><a href="https://contently.com" target="_blank" onclick="this.className='clicked'">contently.com</a></div>
+    <div class="link-card"><a href="https://www.coroflot.com" target="_blank" onclick="this.className='clicked'">coroflot.com</a></div>
+    <div class="link-card"><a href="https://www.countable.us" target="_blank" onclick="this.className='clicked'">countable.us</a></div>
+    <div class="link-card"><a href="https://www.cracked.com" target="_blank" onclick="this.className='clicked'">cracked.com</a></div>
+    <div class="link-card"><a href="https://crevado.com" target="_blank" onclick="this.className='clicked'">crevado.com</a></div>
+    <div class="link-card"><a href="https://dev.to" target="_blank" onclick="this.className='clicked'">dev.to</a></div>
+    <div class="link-card"><a href="https://www.dailymotion.com" target="_blank" onclick="this.className='clicked'">dailymotion.com</a></div>
+    <div class="link-card"><a href="https://www.designspiration.net" target="_blank" onclick="this.className='clicked'">designspiration.net</a></div>
+    <div class="link-card"><a href="https://deviantart.com" target="_blank" onclick="this.className='clicked'">deviantart.com</a></div>
+    <div class="link-card"><a href="https://www.discogs.com" target="_blank" onclick="this.className='clicked'">discogs.com</a></div>
+    <div class="link-card"><a href="https://discuss.elastic.co" target="_blank" onclick="this.className='clicked'">discuss.elastic.co</a></div>
+    <div class="link-card"><a href="https://disqus.com" target="_blank" onclick="this.className='clicked'">disqus.com</a></div>
+    <div class="link-card"><a href="https://hub.docker.com" target="_blank" onclick="this.className='clicked'">hub.docker.com</a></div>
+    <div class="link-card"><a href="https://dribbble.com" target="_blank" onclick="this.className='clicked'">dribbble.com</a></div>
+    <div class="link-card"><a href="https://www.duolingo.com" target="_blank" onclick="this.className='clicked'">duolingo.com</a></div>
+    <div class="link-card"><a href="https://ello.co" target="_blank" onclick="this.className='clicked'">ello.co</a></div>
+    <div class="link-card"><a href="https://www.etsy.com" target="_blank" onclick="this.className='clicked'">etsy.com</a></div>
+    <div class="link-card"><a href="https://euw.op.gg" target="_blank" onclick="this.className='clicked'">euw.op.gg</a></div>
+    <div class="link-card"><a href="https://www.eyeem.com" target="_blank" onclick="this.className='clicked'">eyeem.com</a></div>
+    <div class="link-card"><a href="https://f3.cool" target="_blank" onclick="this.className='clicked'">f3.cool</a></div>
+    <div class="link-card"><a href="https://www.facebook.com" target="_blank" onclick="this.className='clicked'">facebook.com</a></div>
+    <div class="link-card"><a href="https://facenama.com" target="_blank" onclick="this.className='clicked'">facenama.com</a></div>
+    <div class="link-card"><a href="https://www.fandom.com" target="_blank" onclick="this.className='clicked'">fandom.com</a></div>
+    <div class="link-card"><a href="https://www.flickr.com" target="_blank" onclick="this.className='clicked'">flickr.com</a></div>
+    <div class="link-card"><a href="https://my.flightradar24.com" target="_blank" onclick="this.className='clicked'">flightradar24.com</a></div>
+    <div class="link-card"><a href="https://flipboard.com" target="_blank" onclick="this.className='clicked'">flipboard.com</a></div>
+    <div class="link-card"><a href="https://www.rusfootball.info" target="_blank" onclick="this.className='clicked'">rusfootball.info</a></div>
+    <div class="link-card"><a href="https://fortnitetracker.com" target="_blank" onclick="this.className='clicked'">fortnitetracker.com</a></div>
+    <div class="link-card"><a href="https://freelance.habr.com" target="_blank" onclick="this.className='clicked'">freelance.habr.com</a></div>
+    <div class="link-card"><a href="https://www.freelancer.com" target="_blank" onclick="this.className='clicked'">freelancer.com</a></div>
+    <div class="link-card"><a href="https://freesound.org" target="_blank" onclick="this.className='clicked'">freesound.org</a></div>
+    <div class="link-card"><a href="https://gdprofiles.com" target="_blank" onclick="this.className='clicked'">gdprofiles.com</a></div>
+    <div class="link-card"><a href="https://www.gamespot.com" target="_blank" onclick="this.className='clicked'">gamespot.com</a></div>
+    <div class="link-card"><a href="https://www.getmyuni.com" target="_blank" onclick="this.className='clicked'">getmyuni.com</a></div>
+    <div class="link-card"><a href="https://giphy.com" target="_blank" onclick="this.className='clicked'">giphy.com</a></div>
+    <div class="link-card"><a href="https://www.github.com" target="_blank" onclick="this.className='clicked'">github.com</a></div>
+    <div class="link-card"><a href="https://github.community" target="_blank" onclick="this.className='clicked'">github.community</a></div>
+    <div class="link-card"><a href="https://gitlab.com" target="_blank" onclick="this.className='clicked'">gitlab.com</a></div>
+    <div class="link-card"><a href="https://gitee.com" target="_blank" onclick="this.className='clicked'">gitee.com</a></div>
+    <div class="link-card"><a href="https://www.goodreads.com" target="_blank" onclick="this.className='clicked'">goodreads.com</a></div>
+    <div class="link-card"><a href="http://en.gravatar.com" target="_blank" onclick="this.className='clicked'">gravatar.com</a></div>
+    <div class="link-card"><a href="https://www.gumroad.com" target="_blank" onclick="this.className='clicked'">gumroad.com</a></div>
+    <div class="link-card"><a href="https://forums.gunsandammo.com" target="_blank" onclick="this.className='clicked'">gunsandammo.com</a></div>
+    <div class="link-card"><a href="https://gurushots.com" target="_blank" onclick="this.className='clicked'">gurushots.com</a></div>
+    <div class="link-card"><a href="https://forum.hackthebox.eu" target="_blank" onclick="this.className='clicked'">hackthebox.eu</a></div>
+    <div class="link-card"><a href="https://hackaday.io" target="_blank" onclick="this.className='clicked'">hackaday.io</a></div>
+    <div class="link-card"><a href="https://news.ycombinator.com" target="_blank" onclick="this.className='clicked'">ycombinator.com</a></div>
+    <div class="link-card"><a href="https://hackerone.com" target="_blank" onclick="this.className='clicked'">hackerone.com</a></div>
+    <div class="link-card"><a href="https://hackerrank.com" target="_blank" onclick="this.className='clicked'">hackerrank.com</a></div>
+    <div class="link-card"><a href="https://www.house-mixes.com" target="_blank" onclick="this.className='clicked'">house-mixes.com</a></div>
+    <div class="link-card"><a href="https://houzz.com" target="_blank" onclick="this.className='clicked'">houzz.com</a></div>
+    <div class="link-card"><a href="https://hubpages.com" target="_blank" onclick="this.className='clicked'">hubpages.com</a></div>
+    <div class="link-card"><a href="https://hubski.com" target="_blank" onclick="this.className='clicked'">hubski.com</a></div>
+    <div class="link-card"><a href="https://icq.im" target="_blank" onclick="this.className='clicked'">icq.im</a></div>
+    <div class="link-card"><a href="https://www.ifttt.com" target="_blank" onclick="this.className='clicked'">ifttt.com</a></div>
+    <div class="link-card"><a href="https://imgup.cz" target="_blank" onclick="this.className='clicked'">imgup.cz</a></div>
+    <div class="link-card"><a href="https://imgur.com" target="_blank" onclick="this.className='clicked'">imgur.com</a></div>
+    <div class="link-card"><a href="https://www.instagram.com" target="_blank" onclick="this.className='clicked'">instagram.com</a></div>
+    <div class="link-card"><a href="https://www.instructables.com" target="_blank" onclick="this.className='clicked'">instructables.com</a></div>
+    <div class="link-card"><a href="https://issuu.com" target="_blank" onclick="this.className='clicked'">issuu.com</a></div>
+    <div class="link-card"><a href="https://itch.io" target="_blank" onclick="this.className='clicked'">itch.io</a></div>
+    <div class="link-card"><a href="https://jimdosite.com" target="_blank" onclick="this.className='clicked'">jimdosite.com</a></div>
+    <div class="link-card"><a href="https://www.kaggle.com" target="_blank" onclick="this.className='clicked'">kaggle.com</a></div>
+    <div class="link-card"><a href="https://forums.kali.org" target="_blank" onclick="this.className='clicked'">kali.org</a></div>
+    <div class="link-card"><a href="https://keybase.io" target="_blank" onclick="this.className='clicked'">keybase.io</a></div>
+    <div class="link-card"><a href="https://kik.me" target="_blank" onclick="this.className='clicked'">kik.me</a></div>
+    <div class="link-card"><a href="https://www.kongregate.com" target="_blank" onclick="this.className='clicked'">kongregate.com</a></div>
+    <div class="link-card"><a href="https://www.linux.org.ru" target="_blank" onclick="this.className='clicked'">linux.org.ru</a></div>
+    <div class="link-card"><a href="https://launchpad.net" target="_blank" onclick="this.className='clicked'">launchpad.net</a></div>
+    <div class="link-card"><a href="https://leetcode.com" target="_blank" onclick="this.className='clicked'">leetcode.com</a></div>
+    <div class="link-card"><a href="https://letterboxd.com" target="_blank" onclick="this.className='clicked'">letterboxd.com</a></div>
+    <div class="link-card"><a href="https://lichess.org" target="_blank" onclick="this.className='clicked'">lichess.org</a></div>
+    <div class="link-card"><a href="https://livejournal.com" target="_blank" onclick="this.className='clicked'">livejournal.com</a></div>
+    <div class="link-card"><a href="https://www.liveleak.com" target="_blank" onclick="this.className='clicked'">liveleak.com</a></div>
+    <div class="link-card"><a href="https://lobste.rs" target="_blank" onclick="this.className='clicked'">lobste.rs</a></div>
+    <div class="link-card"><a href="https://lolchess.gg" target="_blank" onclick="this.className='clicked'">lolchess.gg</a></div>
+    <div class="link-card"><a href="https://medium.com" target="_blank" onclick="this.className='clicked'">medium.com</a></div>
+    <div class="link-card"><a href="https://www.memrise.com" target="_blank" onclick="this.className='clicked'">memrise.com</a></div>
+    <div class="link-card"><a href="https://www.mixcloud.com" target="_blank" onclick="this.className='clicked'">mixcloud.com</a></div>
+    <div class="link-card"><a href="https://www.munzee.com" target="_blank" onclick="this.className='clicked'">munzee.com</a></div>
+    <div class="link-card"><a href="https://myanimelist.net" target="_blank" onclick="this.className='clicked'">myanimelist.net</a></div>
+    <div class="link-card"><a href="https://www.myminifactory.com" target="_blank" onclick="this.className='clicked'">myminifactory.com</a></div>
+    <div class="link-card"><a href="https://myspace.com" target="_blank" onclick="this.className='clicked'">myspace.com</a></div>
+    <div class="link-card"><a href="https://www.native-instruments.com" target="_blank" onclick="this.className='clicked'">native-instruments.com</a></div>
+    <div class="link-card"><a href="https://namemc.com" target="_blank" onclick="this.className='clicked'">namemc.com</a></div>
+    <div class="link-card"><a href="https://nationstates.net" target="_blank" onclick="this.className='clicked'">nationstates.net</a></div>
+    <div class="link-card"><a href="https://blog.naver.com" target="_blank" onclick="this.className='clicked'">naver.com</a></div>
+    <div class="link-card"><a href="https://newgrounds.com" target="_blank" onclick="this.className='clicked'">newgrounds.com</a></div>
+    <div class="link-card"><a href="https://nightbot.tv" target="_blank" onclick="this.className='clicked'">nightbot.tv</a></div>
+    <div class="link-card"><a href="https://notabug.org" target="_blank" onclick="this.className='clicked'">notabug.org</a></div>
+    <div class="link-card"><a href="https://ok.ru" target="_blank" onclick="this.className='clicked'">ok.ru</a></div>
+    <div class="link-card"><a href="https://www.openstreetmap.org" target="_blank" onclick="this.className='clicked'">openstreetmap.org</a></div>
+    <div class="link-card"><a href="https://opensource.com" target="_blank" onclick="this.className='clicked'">opensource.com</a></div>
+    <div class="link-card"><a href="https://community.oracle.com" target="_blank" onclick="this.className='clicked'">community.oracle.com</a></div>
+    <div class="link-card"><a href="https://otzovik.com" target="_blank" onclick="this.className='clicked'">otzovik.com</a></div>
+    <div class="link-card"><a href="https://ourdjtalk.com" target="_blank" onclick="this.className='clicked'">ourdjtalk.com</a></div>
+    <div class="link-card"><a href="https://forums.pcgamer.com" target="_blank" onclick="this.className='clicked'">pcgamer.com</a></div>
+    <div class="link-card"><a href="https://pcpartpicker.com" target="_blank" onclick="this.className='clicked'">pcpartpicker.com</a></div>
+    <div class="link-card"><a href="https://psnprofiles.com" target="_blank" onclick="this.className='clicked'">psnprofiles.com</a></div>
+    <div class="link-card"><a href="https://packagist.org" target="_blank" onclick="this.className='clicked'">packagist.org</a></div>
+    <div class="link-card"><a href="https://pastebin.com" target="_blank" onclick="this.className='clicked'">pastebin.com</a></div>
+    <div class="link-card"><a href="https://www.patreon.com" target="_blank" onclick="this.className='clicked'">patreon.com</a></div>
+    <div class="link-card"><a href="https://www.periscope.tv" target="_blank" onclick="this.className='clicked'">periscope.tv</a></div>
+    <div class="link-card"><a href="https://www.pinkbike.com" target="_blank" onclick="this.className='clicked'">pinkbike.com</a></div>
+    <div class="link-card"><a href="https://www.pinterest.com" target="_blank" onclick="this.className='clicked'">pinterest.com</a></div>
+    <div class="link-card"><a href="https://play.google.com" target="_blank" onclick="this.className='clicked'">play.google.com</a></div>
+    <div class="link-card"><a href="https://plug.dj" target="_blank" onclick="this.className='clicked'">plug.dj</a></div>
+    <div class="link-card"><a href="https://pokemonshowdown.com" target="_blank" onclick="this.className='clicked'">pokemonshowdown.com</a></div>
+    <div class="link-card"><a href="https://polarsteps.com" target="_blank" onclick="this.className='clicked'">polarsteps.com</a></div>
+    <div class="link-card"><a href="https://www.polygon.com" target="_blank" onclick="this.className='clicked'">polygon.com</a></div>
+    <div class="link-card"><a href="https://www.producthunt.com" target="_blank" onclick="this.className='clicked'">producthunt.com</a></div>
+    <div class="link-card"><a href="http://promodj.com" target="_blank" onclick="this.className='clicked'">promodj.com</a></div>
+    <div class="link-card"><a href="https://pypi.org" target="_blank" onclick="this.className='clicked'">pypi.org</a></div>
+    <div class="link-card"><a href="https://quizlet.com" target="_blank" onclick="this.className='clicked'">quizlet.com</a></div>
+    <div class="link-card"><a href="https://www.quora.com" target="_blank" onclick="this.className='clicked'">quora.com</a></div>
+    <div class="link-card"><a href="https://raidforums.com" target="_blank" onclick="this.className='clicked'">raidforums.com</a></div>
+    <div class="link-card"><a href="https://rajce.idnes.cz" target="_blank" onclick="this.className='clicked'">rajce.idnes.cz</a></div>
+    <div class="link-card"><a href="https://rateyourmusic.com" target="_blank" onclick="this.className='clicked'">rateyourmusic.com</a></div>
+    <div class="link-card"><a href="https://www.redbubble.com" target="_blank" onclick="this.className='clicked'">redbubble.com</a></div>
+    <div class="link-card"><a href="https://www.reddit.com" target="_blank" onclick="this.className='clicked'">reddit.com</a></div>
+    <div class="link-card"><a href="https://repl.it" target="_blank" onclick="this.className='clicked'">repl.it</a></div>
+    <div class="link-card"><a href="https://www.researchgate.net" target="_blank" onclick="this.className='clicked'">researchgate.net</a></div>
+    <div class="link-card"><a href="https://www.reverbnation.com" target="_blank" onclick="this.className='clicked'">reverbnation.com</a></div>
+    <div class="link-card"><a href="https://www.roblox.com" target="_blank" onclick="this.className='clicked'">roblox.com</a></div>
+    <div class="link-card"><a href="https://rubygems.org" target="_blank" onclick="this.className='clicked'">rubygems.org</a></div>
+    <div class="link-card"><a href="https://www.sbazar.cz" target="_blank" onclick="this.className='clicked'">sbazar.cz</a></div>
+    <div class="link-card"><a href="https://scratch.mit.edu" target="_blank" onclick="this.className='clicked'">scratch.mit.edu</a></div>
+    <div class="link-card"><a href="https://www.scribd.com" target="_blank" onclick="this.className='clicked'">scribd.com</a></div>
+    <div class="link-card"><a href="https://www.shitpostbot.com" target="_blank" onclick="this.className='clicked'">shitpostbot.com</a></div>
+    <div class="link-card"><a href="https://community.signalusers.org" target="_blank" onclick="this.className='clicked'">signalusers.org</a></div>
+    <div class="link-card"><a href="https://slack.com" target="_blank" onclick="this.className='clicked'">slack.com</a></div>
+    <div class="link-card"><a href="https://slashdot.org" target="_blank" onclick="this.className='clicked'">slashdot.org</a></div>
+    <div class="link-card"><a href="https://slideshare.net" target="_blank" onclick="this.className='clicked'">slideshare.net</a></div>
+    <div class="link-card"><a href="https://www.smashcast.tv" target="_blank" onclick="this.className='clicked'">smashcast.tv</a></div>
+    <div class="link-card"><a href="https://www.smule.com" target="_blank" onclick="this.className='clicked'">smule.com</a></div>
+    <div class="link-card"><a href="https://soundcloud.com" target="_blank" onclick="this.className='clicked'">soundcloud.com</a></div>
+    <div class="link-card"><a href="https://sourceforge.net" target="_blank" onclick="this.className='clicked'">sourceforge.net</a></div>
+    <div class="link-card"><a href="https://soylentnews.org" target="_blank" onclick="this.className='clicked'">soylentnews.org</a></div>
+    <div class="link-card"><a href="https://www.sparkpeople.com" target="_blank" onclick="this.className='clicked'">sparkpeople.com</a></div>
+    <div class="link-card"><a href="https://speedrun.com" target="_blank" onclick="this.className='clicked'">speedrun.com</a></div>
+    <div class="link-card"><a href="https://splits.io" target="_blank" onclick="this.className='clicked'">splits.io</a></div>
+    <div class="link-card"><a href="https://www.sporcle.com" target="_blank" onclick="this.className='clicked'">sporcle.com</a></div>
+    <div class="link-card"><a href="https://www.sports.ru" target="_blank" onclick="this.className='clicked'">sports.ru</a></div>
+    <div class="link-card"><a href="http://googleusercontent.com" target="_blank" onclick="this.className='clicked'">googleusercontent.com</a></div>
+    <div class="link-card"><a href="https://robertsspaceindustries.com" target="_blank" onclick="this.className='clicked'">robertsspaceindustries.com</a></div>
+    <div class="link-card"><a href="https://steamcommunity.com" target="_blank" onclick="this.className='clicked'">steamcommunity.com</a></div>
+    <div class="link-card"><a href="https://steamid.uk" target="_blank" onclick="this.className='clicked'">steamid.uk</a></div>
+    <div class="link-card"><a href="https://www.strava.com" target="_blank" onclick="this.className='clicked'">strava.com</a></div>
+    <div class="link-card"><a href="https://forum.sublimetext.com" target="_blank" onclick="this.className='clicked'">sublimetext.com</a></div>
+    <div class="link-card"><a href="https://ch.tetr.io" target="_blank" onclick="this.className='clicked'">tetr.io</a></div>
+    <div class="link-card"><a href="https://t.me" target="_blank" onclick="this.className='clicked'">t.me</a></div>
+    <div class="link-card"><a href="https://tellonym.me" target="_blank" onclick="this.className='clicked'">tellonym.me</a></div>
+    <div class="link-card"><a href="https://tiktok.com" target="_blank" onclick="this.className='clicked'">tiktok.com</a></div>
+    <div class="link-card"><a href="https://www.gotinder.com" target="_blank" onclick="this.className='clicked'">gotinder.com</a></div>
+    <div class="link-card"><a href="http://en.tm-ladder.com" target="_blank" onclick="this.className='clicked'">tm-ladder.com</a></div>
+    <div class="link-card"><a href="https://www.tradingview.com" target="_blank" onclick="this.className='clicked'">tradingview.com</a></div>
+    <div class="link-card"><a href="https://www.trakt.tv" target="_blank" onclick="this.className='clicked'">trakt.tv</a></div>
+    <div class="link-card"><a href="https://trashbox.ru" target="_blank" onclick="this.className='clicked'">trashbox.ru</a></div>
+    <div class="link-card"><a href="https://trello.com" target="_blank" onclick="this.className='clicked'">trello.com</a></div>
+    <div class="link-card"><a href="https://tripadvisor.com" target="_blank" onclick="this.className='clicked'">tripadvisor.com</a></div>
+    <div class="link-card"><a href="https://tryhackme.com" target="_blank" onclick="this.className='clicked'">tryhackme.com</a></div>
+    <div class="link-card"><a href="https://www.twitch.tv" target="_blank" onclick="this.className='clicked'">twitch.tv</a></div>
+    <div class="link-card"><a href="https://mobile.twitter.com" target="_blank" onclick="this.className='clicked'">twitter.com</a></div>
+    <div class="link-card"><a href="https://data.typeracer.com" target="_blank" onclick="this.className='clicked'">typeracer.com</a></div>
+    <div class="link-card"><a href="https://ultimate-guitar.com" target="_blank" onclick="this.className='clicked'">ultimate-guitar.com</a></div>
+    <div class="link-card"><a href="https://unsplash.com" target="_blank" onclick="this.className='clicked'">unsplash.com</a></div>
+    <div class="link-card"><a href="https://vk.com" target="_blank" onclick="this.className='clicked'">vk.com</a></div>
+    <div class="link-card"><a href="https://vsco.co" target="_blank" onclick="this.className='clicked'">vsco.co</a></div>
+    <div class="link-card"><a href="https://forum.velomania.ru" target="_blank" onclick="this.className='clicked'">velomania.ru</a></div>
+    <div class="link-card"><a href="https://venmo.com" target="_blank" onclick="this.className='clicked'">venmo.com</a></div>
+    <div class="link-card"><a href="https://vero.co" target="_blank" onclick="this.className='clicked'">vero.co</a></div>
+    <div class="link-card"><a href="https://vimeo.com" target="_blank" onclick="this.className='clicked'">vimeo.com</a></div>
+    <div class="link-card"><a href="https://virgool.io" target="_blank" onclick="this.className='clicked'">virgool.io</a></div>
+    <div class="link-card"><a href="https://www.virustotal.com" target="_blank" onclick="this.className='clicked'">virustotal.com</a></div>
+    <div class="link-card"><a href="https://www.warriorforum.com" target="_blank" onclick="this.className='clicked'">warriorforum.com</a></div>
+    <div class="link-card"><a href="https://www.wattpad.com" target="_blank" onclick="this.className='clicked'">wattpad.com</a></div>
+    <div class="link-card"><a href="https://weheartit.com" target="_blank" onclick="this.className='clicked'">weheartit.com</a></div>
+    <div class="link-card"><a href="https://webnode.cz" target="_blank" onclick="this.className='clicked'">webnode.cz</a></div>
+    <div class="link-card"><a href="https://forums.whonix.org" target="_blank" onclick="this.className='clicked'">whonix.org</a></div>
+    <div class="link-card"><a href="http://www.wikidot.com" target="_blank" onclick="this.className='clicked'">wikidot.com</a></div>
+    <div class="link-card"><a href="https://www.wikipedia.org" target="_blank" onclick="this.className='clicked'">wikipedia.org</a></div>
+    <div class="link-card"><a href="https://community.windy.com" target="_blank" onclick="this.className='clicked'">windy.com</a></div>
+    <div class="link-card"><a href="https://wix.com" target="_blank" onclick="this.className='clicked'">wix.com</a></div>
+    <div class="link-card"><a href="https://wordpress.com" target="_blank" onclick="this.className='clicked'">wordpress.com</a></div>
+    <div class="link-card"><a href="https://profiles.wordpress.org" target="_blank" onclick="this.className='clicked'">profiles.wordpress.org</a></div>
+    <div class="link-card"><a href="https://xboxgamertag.com" target="_blank" onclick="this.className='clicked'">xboxgamertag.com</a></div>
+    <div class="link-card"><a href="https://www.younow.com" target="_blank" onclick="this.className='clicked'">younow.com</a></div>
+    <div class="link-card"><a href="https://youpic.com" target="_blank" onclick="this.className='clicked'">youpic.com</a></div>
+    <div class="link-card"><a href="https://www.youtube.com" target="_blank" onclick="this.className='clicked'">youtube.com</a></div>
+    <div class="link-card"><a href="https://www.zhihu.com" target="_blank" onclick="this.className='clicked'">zhihu.com</a></div>
+    <div class="link-card"><a href="https://akniga.org" target="_blank" onclick="this.className='clicked'">akniga.org</a></div>
+    <div class="link-card"><a href="https://allmylinks.com" target="_blank" onclick="this.className='clicked'">allmylinks.com</a></div>
+    <div class="link-card"><a href="https://aminoapps.com" target="_blank" onclick="this.className='clicked'">aminoapps.com</a></div>
+    <div class="link-card"><a href="http://www.authorstream.com" target="_blank" onclick="this.className='clicked'">authorstream.com</a></div>
+    <div class="link-card"><a href="https://www.baby.ru" target="_blank" onclick="this.className='clicked'">baby.ru</a></div>
+    <div class="link-card"><a href="https://www.babyblog.ru" target="_blank" onclick="this.className='clicked'">babyblog.ru</a></div>
+    <div class="link-card"><a href="https://chaos.social" target="_blank" onclick="this.className='clicked'">chaos.social</a></div>
+    <div class="link-card"><a href="https://www.couchsurfing.com" target="_blank" onclick="this.className='clicked'">couchsurfing.com</a></div>
+    <div class="link-card"><a href="https://d3.ru" target="_blank" onclick="this.className='clicked'">d3.ru</a></div>
+    <div class="link-card"><a href="https://www.dailykos.com" target="_blank" onclick="this.className='clicked'">dailykos.com</a></div>
+    <div class="link-card"><a href="http://dating.ru" target="_blank" onclick="this.className='clicked'">dating.ru</a></div>
+    <div class="link-card"><a href="https://devrant.com" target="_blank" onclick="this.className='clicked'">devrant.com</a></div>
+    <div class="link-card"><a href="https://www.drive2.ru" target="_blank" onclick="this.className='clicked'">drive2.ru</a></div>
+    <div class="link-card"><a href="https://egpu.io" target="_blank" onclick="this.className='clicked'">egpu.io</a></div>
+    <div class="link-card"><a href="https://community.eintracht.de" target="_blank" onclick="this.className='clicked'">eintracht.de</a></div>
+    <div class="link-card"><a href="https://www.fixya.com" target="_blank" onclick="this.className='clicked'">fixya.com</a></div>
+    <div class="link-card"><a href="https://www.fl.ru" target="_blank" onclick="this.className='clicked'">fl.ru</a></div>
+    <div class="link-card"><a href="https://forum.guns.ru" target="_blank" onclick="this.className='clicked'">guns.ru</a></div>
+    <div class="link-card"><a href="https://www.forumhouse.ru" target="_blank" onclick="this.className='clicked'">forumhouse.ru</a></div>
+    <div class="link-card"><a href="https://www.geocaching.com" target="_blank" onclick="this.className='clicked'">geocaching.com</a></div>
+    <div class="link-card"><a href="https://gfycat.com" target="_blank" onclick="this.className='clicked'">gfycat.com</a></div>
+    <div class="link-card"><a href="https://habr.com" target="_blank" onclick="this.className='clicked'">habr.com</a></div>
+    <div class="link-card"><a href="https://www.hackster.io" target="_blank" onclick="this.className='clicked'">hackster.io</a></div>
+    <div class="link-card"><a href="https://www.hunting.ru" target="_blank" onclick="this.className='clicked'">hunting.ru</a></div>
+    <div class="link-card"><a href="https://imgsrc.ru" target="_blank" onclick="this.className='clicked'">imgsrc.ru</a></div>
+    <div class="link-card"><a href="http://forum.igromania.ru" target="_blank" onclick="this.className='clicked'">igromania.ru</a></div>
+    <div class="link-card"><a href="https://www.interpals.net" target="_blank" onclick="this.className='clicked'">interpals.net</a></div>
+    <div class="link-card"><a href="https://irecommend.ru" target="_blank" onclick="this.className='clicked'">irecommend.ru</a></div>
+    <div class="link-card"><a href="https://jbzd.com.pl" target="_blank" onclick="this.className='clicked'">jbzd.com.pl</a></div>
+    <div class="link-card"><a href="http://www.jeuxvideo.com" target="_blank" onclick="this.className='clicked'">jeuxvideo.com</a></div>
+    <div class="link-card"><a href="https://ko-fi.com" target="_blank" onclick="this.className='clicked'">ko-fi.com</a></div>
+    <div class="link-card"><a href="https://kwork.ru" target="_blank" onclick="this.className='clicked'">kwork.ru</a></div>
+    <div class="link-card"><a href="https://lab.pentestit.ru" target="_blank" onclick="this.className='clicked'">pentestit.ru</a></div>
+    <div class="link-card"><a href="https://last.fm" target="_blank" onclick="this.className='clicked'">last.fm</a></div>
+    <div class="link-card"><a href="https://forum.leasehackr.com" target="_blank" onclick="this.className='clicked'">leasehackr.com</a></div>
+    <div class="link-card"><a href="https://www.livelib.ru" target="_blank" onclick="this.className='clicked'">livelib.ru</a></div>
+    <div class="link-card"><a href="https://mastodon.cloud" target="_blank" onclick="this.className='clicked'">mastodon.cloud</a></div>
+    <div class="link-card"><a href="https://mastodon.social" target="_blank" onclick="this.className='clicked'">mastodon.social</a></div>
+    <div class="link-card"><a href="https://mastodon.technology" target="_blank" onclick="this.className='clicked'">mastodon.technology</a></div>
+    <div class="link-card"><a href="https://mastodon.xyz" target="_blank" onclick="this.className='clicked'">mastodon.xyz</a></div>
+    <div class="link-card"><a href="https://www.mercadolivre.com.br" target="_blank" onclick="this.className='clicked'">mercadolivre.com.br</a></div>
+    <div class="link-card"><a href="https://www.metacritic.com" target="_blank" onclick="this.className='clicked'">metacritic.com</a></div>
+    <div class="link-card"><a href="https://moikrug.ru" target="_blank" onclick="this.className='clicked'">moikrug.ru</a></div>
+    <div class="link-card"><a href="https://mstdn.io" target="_blank" onclick="this.className='clicked'">mstdn.io</a></div>
+    <div class="link-card"><a href="https://www.nairaland.com" target="_blank" onclick="this.className='clicked'">nairaland.com</a></div>
+    <div class="link-card"><a href="https://www.nn.ru" target="_blank" onclick="this.className='clicked'">nn.ru</a></div>
+    <div class="link-card"><a href="https://note.com" target="_blank" onclick="this.className='clicked'">note.com</a></div>
+    <div class="link-card"><a href="https://www.npmjs.com" target="_blank" onclick="this.className='clicked'">npmjs.com</a></div>
+    <div class="link-card"><a href="https://www.opennet.ru" target="_blank" onclick="this.className='clicked'">opennet.ru</a></div>
+    <div class="link-card"><a href="https://osu.ppy.sh" target="_blank" onclick="this.className='clicked'">osu.ppy.sh</a></div>
+    <div class="link-card"><a href="https://php.ru" target="_blank" onclick="this.className='clicked'">php.ru</a></div>
+    <div class="link-card"><a href="https://pikabu.ru" target="_blank" onclick="this.className='clicked'">pikabu.ru</a></div>
+    <div class="link-card"><a href="https://pr0gramm.com" target="_blank" onclick="this.className='clicked'">pr0gramm.com</a></div>
+    <div class="link-card"><a href="https://prog.hu" target="_blank" onclick="this.className='clicked'">prog.hu</a></div>
+    <div class="link-card"><a href="https://echo.msk.ru" target="_blank" onclick="this.className='clicked'">echo.msk.ru</a></div>
+    <div class="link-card"><a href="https://satsis.info" target="_blank" onclick="this.className='clicked'">satsis.info</a></div>
+    <div class="link-card"><a href="https://social.tchncs.de" target="_blank" onclick="this.className='clicked'">tchncs.de</a></div>
+    <div class="link-card"><a href="https://spletnik.ru" target="_blank" onclick="this.className='clicked'">spletnik.ru</a></div>
+    <div class="link-card"><a href="https://www.svidbook.ru" target="_blank" onclick="this.className='clicked'">svidbook.ru</a></div>
+    <div class="link-card"><a href="https://www.toster.ru" target="_blank" onclick="this.className='clicked'">toster.ru</a></div>
+    <div class="link-card"><a href="http://uid.me" target="_blank" onclick="this.className='clicked'">uid.me</a></div>
+</div>
+
+</body>
+</html>
